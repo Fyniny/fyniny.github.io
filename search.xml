@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[golang]]></title>
+    <url>%2F2019%2F04%2F19%2Fgolang%2F</url>
+    <content type="text"><![CDATA[kfkasjkjf]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[linux学习]]></title>
     <url>%2F2019%2F04%2F19%2Flinux%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[命令（GNU’s Not Unix）关机命令 shutdown 发送信号给init进程，要求它改变runlevel 子命令 ​ -t 改变runlevel之前，告诉init多久之后关机 ​ -r 重启 ​ -k 发送信号给每位登录者 ​ -h 关机后关闭电源 ​ -n 强行关机，不建议 ​ -c 取消目前正在执行的关机，可以输入一条消息来解释为什么取消 ​ -f 重启时忽略fsck检查磁盘 ​ -F 重启时强行fsck检查磁盘 ​ -time 定时关机 halt 关闭系统 reboot telinit poweroff 终端访问 exit 或者 ctrl + d 退出终端 ctrl + u 删除一行输入 常用命令ls -l 开头是个字符解释 - 普通文件 d 目录 b 块设备文件 l 符号链接 c 字符设备文件 后面 9 位 分 3 3 文件属主权限 同组用户权限 其他用户权限 tar 命令1tar [主选项 辅选项] 文件或者目录 主选项必选 ​ c 创建新的档案文件，若想要备份新档案或者一些文件，则带上 ​ r 把要存档的文件追加到档案文件的末尾。 ​ t 列出档案文件的内容 ​ u 更新文件。用新增的文件取代原备份文件，如果在备份文件中找不到要更新的文件，则追加到备份文件的最后 ​ x 从档案文件中删除文件 辅选项可选 ​ b 为磁带机设定，后跟一数字，用来说明区块的大小，系统预设值为20(20 * 512B) ​ f 使用档案文件或设备，通常是必选的 ​ m 在还原文件时，把所有文件的修改时间设定为现在 ​ M 创建多卷的档案文件 ​ v 详细报告tar处理的文件信息 ​ w 每一步都需要确认 ​ z 用gzip进行解/压缩 gzip命令1gzip [选项] 压缩/解压缩的文件名 ​ c 将输出写到标准输出上，并保留文件 ​ d 解压 ​ l 对每个压缩文件显示下列字段 ​ 压缩文件的大小 ​ 未压缩文件的大小 ​ 压缩比 ​ 未压缩文件的名字 ​ r 递归地查找指定目录并压缩其中的所有文件或者解压缩 ​ t 测试，检查压缩文件是否完整 ​ v 对每一个压缩和解压的文件，显示文件名和压缩比 ​ num 指定压缩的速度 l / – fast 最快压缩方式，地压缩比 -9 / –best 最慢压缩方式，高压缩比 unzip1unzip [选项] 压缩文件名.zip x 文件列表解压缩文件，不包括指定的file文件 v 查看压缩文件目录，不解压 t 测试文件是否完整，不解压 d 目录名 将压缩文件指定到指定的目录下 z 指是压缩文件的注解 o 覆盖已存在的文件且不确认 n 不覆盖已存在的文件 j 不重建文档的目录结构，把所有文件解压到同一目录下 权限指令chmod 修改文件权限1chmod [who] [+ | - | =] [mode] 文件名 mode =&gt; u g o a chgrp 修改文件或目录所属组1chgrp [选项] group filename chown 修改文件/目录的属主和属组1chown [选项] 用户或组 文件 -R 递归改变 -v 像是chown命令所做的工作 与用户有关的命令su 命令1su [-fmp] [-c command] [-s Shell] [-help] [--version] [ - ] [USER[ARG]] -f 不必读启动文件，仅用于csh tcsh -m -p 执行 su 时不改变环境变量 -c command 变更账号为user的使用者，并执行command之后再变回来 -version 显示版本资讯 USER 预变更的使用者账号 ARG 传入新的Shell参数 bash 快捷键 快捷方式 说明 crtl+k 从光标当前位置删除所有字符至行尾 crtl+u 从光标当前位置删除至行首 ctrl+w 向后删除一个单词 ctrl+a 跳转至命令行首 ctrl+e 跳转至命令行尾 ctrl+y 粘贴最后删除的单词 ctrl+f 向前跳一个字符(功能等同于 右箭头) ctrl+b 向后跳一个字符(功能等同于 左箭头) alt+d 删除光标位置所在的单词 alt+f 向前跳一个单词(向右跳) alt+b 向后跳一个单词(向左跳) !$ 重复执行最后的参数 vim]]></content>
