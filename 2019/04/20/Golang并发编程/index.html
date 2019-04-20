@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="linux">
-<meta name="keywords" content="F">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="/tags/index.html">
+  <meta name="description" content="日志监控系统常见并发模型 进程&amp;amp;线程（apache） 异步非阻塞（Nginx， Libevent， NodeJs） 协程（Golang， Erlang， lua）  Goroutinesinfluxdb一个开源的时序性的数据库，使用Go语言编写，被广泛用于存储系统的监控数据，IOT行业实时数据场景。有如下特性：  部署简单，无外部依赖 内置http支持，使用http读写 类sql的灵活查询">
+<meta name="keywords" content="Go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang并发编程">
+<meta property="og:url" content="/2019/04/20/Golang并发编程/index.html">
 <meta property="og:site_name" content="Fyniny&#39;s blog">
-<meta property="og:description" content="linux">
+<meta property="og:description" content="日志监控系统常见并发模型 进程&amp;amp;线程（apache） 异步非阻塞（Nginx， Libevent， NodeJs） 协程（Golang， Erlang， lua）  Goroutinesinfluxdb一个开源的时序性的数据库，使用Go语言编写，被广泛用于存储系统的监控数据，IOT行业实时数据场景。有如下特性：  部署简单，无外部依赖 内置http支持，使用http读写 类sql的灵活查询">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-19T13:54:24.277Z">
+<meta property="og:updated_time" content="2019-04-20T06:52:08.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="linux">
+<meta name="twitter:title" content="Golang并发编程">
+<meta name="twitter:description" content="日志监控系统常见并发模型 进程&amp;amp;线程（apache） 异步非阻塞（Nginx， Libevent， NodeJs） 协程（Golang， Erlang， lua）  Goroutinesinfluxdb一个开源的时序性的数据库，使用Go语言编写，被广泛用于存储系统的监控数据，IOT行业实时数据场景。有如下特性：  部署简单，无外部依赖 内置http支持，使用http读写 类sql的灵活查询">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="/tags/">
+  <link rel="canonical" href="/2019/04/20/Golang并发编程/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>tags | Fyniny's blog</title>
+  <title>Golang并发编程 | Fyniny's blog</title>
   
 
 
@@ -232,7 +232,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -296,25 +296,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -362,69 +343,212 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/hexo/2019/04/20/Golang并发编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fyniny">
+      <meta itemprop="description" content="keep on going, never give up!">
+      <meta itemprop="image" content="/hexo/images/yibu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fyniny's blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">tags
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
+          <h1 class="post-title" itemprop="name headline">Golang并发编程
+
               
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 2 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-                <a href="/hexo/tags/Go/" style="font-size: 12px; color: #ccc">Go</a> <a href="/hexo/tags/uml/" style="font-size: 12px; color: #ccc">uml</a>
-              
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-20 11:24:00 / 修改时间：14:52:08" itemprop="dateCreated datePublished" datetime="2019-04-20T11:24:00+08:00">2019-04-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/hexo/2019/04/20/Golang并发编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/hexo/2019/04/20/Golang并发编程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/hexo/2019/04/20/Golang并发编程/" class="leancloud_visitors" data-flag-title="Golang并发编程">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="日志监控系统"><a href="#日志监控系统" class="headerlink" title="日志监控系统"></a>日志监控系统</h1><h2 id="常见并发模型"><a href="#常见并发模型" class="headerlink" title="常见并发模型"></a>常见并发模型</h2><ul>
+<li>进程&amp;线程（apache）</li>
+<li>异步非阻塞（Nginx， Libevent， NodeJs）</li>
+<li>协程（Golang， Erlang， lua）</li>
+</ul>
+<h2 id="Goroutines"><a href="#Goroutines" class="headerlink" title="Goroutines"></a>Goroutines</h2><h3 id="influxdb"><a href="#influxdb" class="headerlink" title="influxdb"></a>influxdb</h3><p>一个开源的时序性的数据库，使用Go语言编写，被广泛用于存储系统的监控数据，IOT行业实时数据场景。有如下特性：</p>
+<ul>
+<li>部署简单，无外部依赖</li>
+<li>内置http支持，使用http读写</li>
+<li>类sql的灵活查询（max， min， sum等）</li>
+</ul>
+<p><strong>docker安装influxdb</strong></p>
+<p>监控图：grafana</p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/hexo/tags/Go/" rel="tag"># Go</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo/2019/04/20/Nginx/" rel="prev" title="Nginx学习">
+                Nginx学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -444,8 +568,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -569,6 +702,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#日志监控系统"><span class="nav-number">1.</span> <span class="nav-text">日志监控系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见并发模型"><span class="nav-number">1.1.</span> <span class="nav-text">常见并发模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Goroutines"><span class="nav-number">1.2.</span> <span class="nav-text">Goroutines</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#influxdb"><span class="nav-number">1.2.1.</span> <span class="nav-text">influxdb</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -750,6 +900,8 @@
 
 
 
+
+  
 
 
   
