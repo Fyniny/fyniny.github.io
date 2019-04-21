@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Golang基础]]></title>
+    <url>%2Fhexo%2F2019%2F04%2F21%2FGolang%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[iota123456789101112const ( a = itoa // 0 b // 1 c // 2 d // 3)const ( a = itoa // 0 b , c // b = c = 1 d // 2) 闭包 闭包函数携带着定义这个函数的环境 变量存储位置 — 堆 闭包组成部分 函数自身 函数所引用的环境 闭包通常理解： 就是外函数和返回的构造函数体（句柄）之间的区域是封闭的 123456789// 外部从这里调用到不经过里面而是走return语句的事情func Closure() (func() int) &#123; //这里在程序运行时是封闭的环境 i := 0 return (func() int) &#123; // 这里才是函数真正运行的地方 return i &#125;&#125; 闭包环境是一个独立的环境 1234567891011121314151617// 声明一个闭包func Closure()(func() int) &#123; i := 0 return func() int &#123; i++ return i &#125;&#125;func main() &#123; closure := Closure() fmt.Println(closure()) // 1 fmt.Println(closure()) // 2 fmt.Println(Closure()()) // 1 fmt.Println(Closure()()) // 1&#125; 注意事项 闭包区别于匿名函数 闭包一定存在匿名函数 闭包的每个实例都有自己的运行环境 闭包可能会导致变量逃逸到堆上来延长变量的生命周期，给 GC 带来压力 在一定程度上可以理解为 C/C++ 的栈变量和堆变量，即变量的生命周期，会逃逸的相当于堆变量 defer 延迟调用 后进先出 defer + 函数时，先传递值但不进行计算 12345678910func example() &#123; x := 1 defer func(i int) &#123; fmt.Println(i) &#125;(i) i++ &#125;// 输出 1 变量初始化 引入的包 当前包中的变量常量 当前包的init main函数工程管理工作区 src 源文件 pkg 存放go install命令构建安装后的代码包 bin 与pkg类似，通过go install 命令安装后，保存有go命令留言吗文件生成的可执行文件 当有多个go path的时候，并不会保存在bin目录，此时需要设置gobin环境变量 变量的内存和存储普通类型 除了引用类型引用类型 slice map chan 切片1234567891011121314151617array := [...]int&#123;3,4,5,6,7&#125; //声明数组slice := []int&#123;3,4,5&#125; //声明切片sli1 := array[1:2:4]len(sli1) = 1 // 从1开始取两个cap(sli1) = 3 // 4 - 1 = 3// 每一个切片经过append之后生成新的切片（底层数组不一定改变）_ = append(sli1, 3)fmt.Println(sli1) // 输出 4 fmt.Printf(&quot;%p\n&quot;, s) // 0xc00009c008 ^1sli1 = append(sli1, 3)fmt.Printf(&quot;%p\n&quot;, s) // 0xc00009c008 ^2sli1 = append(sli1,4,5)fmt.Printf(&quot;%p\n&quot;,s) // 0xc00007c080 ^3// ^1 与 ^2 相同，因为sli1的容量足够大，与^3不同，应为sli1的容量不够大，返回了新的切片// 虽然^1,^2的sli1是同一个内存，但是他们的len是不一样的, ^1的len为2，而^2为3，因此^1，^2，^3为不同的切片 注意 数组作为函数参数时是值传递，切片为引用传递 切片为引用类型，但是下面不成立12345var slice []intslice == &amp;slice // false// 事实上，这个等式本来就是错误的，这里只是为了说明slice变量的地址空间与slice内存空间指向的地址是不同的// 即slice也有自己的指针类型fmt.Printf("%T\n", &amp;slice) // *[]int]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Shell脚本学习]]></title>
+    <url>%2Fhexo%2F2019%2F04%2F21%2FShell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[shell语法数据类型 字符串 String 变量 全局变量（环境变量） 局部变量（本地变量） 123456# 不能有空格，若有空格则报错# VAR 是变量名，不需要类型修饰符，因只有一种类型VAR=10VAR=`date`VAR=$(date)# $取变量的值 $变量名 取变量的值 ${变量名} 去变量的值（更安全） $(命令) 取命令的执行结果 $((变量名)) 对变量进行算术运算 $[变量名] 对变量进行算术运算 $[x#y] x进制值为y 1[2#1000] 2进制的 8 控制语句 if else ;switch case ;for ;while … 函数 // Shell 没有一下功能 面向对象 继承，重载，封装，多态 … 框架 to be continue …]]></content>
+      <categories>
+        <category>shell</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[UML统一建模语言]]></title>
     <url>%2Fhexo%2F2019%2F04%2F20%2FUML%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80%2F</url>
     <content type="text"><![CDATA[前言 不属于某种编程语言，而是真的适用于任何软件系统进行建模 以图形的方式 学习目的：能看懂各种图 内容来自韩顺平老师 uml教学视频 软件开发生命周期 软件开发步骤 需求分析（分析师）【30%】分析出软件需要完成什么功能 软件设计（架构师，项目经理）【20%】技术栈操作系统数据库设计表 …用例图 类图 时序图选人 编程阶段（编码阶段）【20%】把设计转化为代码 测试阶段（测试工程师）【20%】 实施和维护阶段【10%】把项目，需要安装和配置设置好，让客户使用，并解决简单问题 软件开发模型（原型开发、递增迭代开发） 瀑布模型（假定需求不变） 增量模型 原型开发模型 建模 工具 uml图 用例图分析系统有哪些角色（一类人，另外一个系统），各个角色使用功能 一个用例详细描述，应该有哪些？ 前置条件 基本事件流 其他事件流 异常事件流 后置条件 类图原则上，一个用例图对应一个类图，一个类图可以包含多个类 六大关系 (java语言描述) 依赖泛化实现（接口）关联组合聚合（类中联系更紧密，生命周期一致） 活动图（本质：流程图）描述一个事件发生的过程 时序图用户进行某个操作时，按照时间顺序看，各个模块之间如何调用 协作图协作图和时序图可以互转，不在画出事例 组件图 部署图]]></content>
